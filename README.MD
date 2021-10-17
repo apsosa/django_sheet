@@ -102,7 +102,49 @@ Example of templates folders:
 			app directory name
 				add bs and CSS
 
-### Templates
+### Models
+
+In this video, I'm going to introduce you to Django module's what are Django models?
+Django models are Python classes that allows us to save data inside a database table.
+Now, each object is a rule in a table. So what that means is that each instance of a class can be stored as a row in a table.
+A model is the single definitive source of information about your data.
+So anything relating to data in your Django project will be found in the model modules contains the
+essential fields and behaviour's of the data that you are storing.
+Generally, each module will map to a single database table.Each module is a python class that also has subclasses, so it will have a subclass called Django DB
+to modules DOT modules. So there is a difference between this module here in uppercase and this one as well.
+Each attribute of the module represents a database field.
+
+Example:
+
+	# Create your models here.
+	class Todolist(models.Model):
+    	text = models.CharField(max_length=45)
+    	completed = models.BooleanField(default=False)
+
+    	def __str__(self):
+        	return self.text
+
+### Migrating Models
+
+When you create a model, you have to do two things.
+You first all have to create migration files, which creates the files that you can then run the migration on.
+So the command you need to create migration files is this:
+
+	$ python manage.py makemigrations
+They make Migration Command will create the migration files and then you need to run another command, which is:
+
+	$ python manage.py migrate
+This Command is what actually creates the table inside the database with the field you have specified in the model.
+
+
+### Add Model to the ADMIN site
+In the admin.py file of your:
+- Import your models. Example:
+
+	from .models import Todolist
+- Register your models. Example:
+
+	admin.site.register(Todolist)
 
 
 
