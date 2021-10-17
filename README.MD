@@ -102,5 +102,7 @@ Example of templates folders:
 			app directory name
 				add bs and CSS
 
+### Templates
+
 
 
