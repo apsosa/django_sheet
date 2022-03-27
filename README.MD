@@ -152,7 +152,7 @@ In the admin.py file of your:
 	pip install django-extensions
 and then add to the project settings in the installed apps
 
-
+```
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -162,7 +162,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
 ]
-
+```
 to active shell pluss with Ipython install first Ipython
 
 	pip install ipython
