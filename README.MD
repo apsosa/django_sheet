@@ -163,5 +163,14 @@ INSTALLED_APPS = [
     'django_extensions',
 ]
 
+to active shell pluss with Ipython install first Ipython
+
+	pip install ipython
+and then add to the project settings
+
+
+SHELL_PLUS = "ipython"
+SHELL_PLUS_PRINT_SQL = True
+SHELL_PLUS_PRINT_SQL_TRUNCATE = None
 
 	
