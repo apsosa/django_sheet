@@ -4,23 +4,23 @@
 
 Creating an enviroment
 
-	$ python3 -m venv enviroment_name
+	python3 -m venv enviroment_name
 Activating the virtual enviroment
 
-	$ source enviroment_name/bin/activate
+	source enviroment_name/bin/activate
 Desactive the virtual enviroment
 
-	$ deactivate
+	deactivate
 
 ### Installing Django
 
 Installing a specific version (in this case version=3.2.1)
 
-	$ pip install Django==3.2.1
+	pip install Django==3.2.1
 
 Creating a new django project
 
-	$ django-admin startproject my_project_name .
+	django-admin startproject my_project_name .
 the "."  it tell django to do not create another folder with the name of project
 
 ### Anatomy of a Django Project
@@ -34,10 +34,10 @@ the "."  it tell django to do not create another folder with the name of project
 
 ### Running the server:
 
-	$ python3 manage.py runserver
+	python3 manage.py runserver
 or I can specified the server like this
 
-	$ python3 manage.py runserver 8080
+	python3 manage.py runserver 8080
 ### Migrations
 
 - Migrate : Applies and unapples migrations
@@ -50,7 +50,7 @@ to this tables.
 
 ### Creating a Django App
 
-	$ django-admin startapp name_of_the_app
+	django-admin startapp name_of_the_app
 by convention app names are plural
 
 ### Activating the App
@@ -88,7 +88,7 @@ For example:
 Django comes with a buit-in administrative interface page.This super user account, it gives you full access to manage the django admin site.You can add content, you can delete content, you can modify content from the django admin interface page.
 To create a superuser account do the next:
 
-	$ python manage.py createsuperuser
+	python manage.py createsuperuser
 
 ### Templates
 Templates in Django can consist of static parts of the desired HTML output.
@@ -130,10 +130,10 @@ When you create a model, you have to do two things.
 You first all have to create migration files, which creates the files that you can then run the migration on.
 So the command you need to create migration files is this:
 
-	$ python manage.py makemigrations
+	python manage.py makemigrations
 They make Migration Command will create the migration files and then you need to run another command, which is:
 
-	$ python manage.py migrate
+	python manage.py migrate
 This Command is what actually creates the table inside the database with the field you have specified in the model.
 
 
@@ -147,4 +147,21 @@ In the admin.py file of your:
 	admin.site.register(Todolist)
 
 
+### Installing django extensions
 
+	pip install django-extensions
+and then add to the project settings in the installed apps
+
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django_extensions',
+]
+
+
+	
